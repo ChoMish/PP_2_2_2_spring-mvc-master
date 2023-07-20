@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+    <style>
+        table {
+            border-collapse: collapse;
+            border-radius: 10px; /* Задаем радиус закругления углов */
+            overflow: hidden; /* Убираем возможные выступы */
+        }
+        th, td {
+            padding: 16px;
+            border: 1px solid black;
+        }
+    </style>
+
+    <table>
+        <tr th:each="car : ${cars}">
+            <th th:text="${car.getBrand()}"></th>
+            <th th:text="${car.getModel()}"></th>
+            <th th:text="${car.getSeries()}"></th>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
